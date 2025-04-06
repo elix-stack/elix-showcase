@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile | Muhammad Ali Yusuf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --nav-bg: rgb(67, 189, 230);
+      --footer-bg: rgb(67, 189, 230);
+      --content-bg: bisque;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --nav-bg: #222;
+      --footer-bg: #222;
+      --content-bg: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Montserrat', sans-serif;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: var(--nav-bg);
+      color: lightcyan;
+      padding: 20px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav .logo a {
+      font-family: 'Pacifico', cursive;
+      color: lightcyan;
+      text-decoration: none;
+      letter-spacing: 3px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      width: 30%;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    nav ul li a {
+      color: lightcyan;
+      text-decoration: none;
+      font-size: 0.8em;
+    }
+
+    nav ul li a:hover {
+      color: gray;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      height: 20px;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .menu-toggle input {
+      position: absolute;
+      width: 40px;
+      height: 28px;
+      left: -6px;
+      top: -3px;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background-color: lightcyan;
+      border-radius: 3px;
+      transition: all 0.5s;
+    }
+
+    main {
+      flex: 1;
+      padding-top: 80px;
+    }
+
+    section {
+      padding: 100px 20px;
+    }
+
+    .contentHero, .contentAboutMe, .contentProjects, .contentContact {
+      background-color: var(--content-bg);
+      border-radius: 30px;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .imgProject {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .contentProjects a {
+      text-decoration: none;
+    }
+
+    .contactForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contactForm input,
+    .contactForm textarea,
+    .contactForm button {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      color: #000;
+    }
+
+    body.dark .contactForm input,
+    body.dark .contactForm textarea {
+      background-color: #222;
+      color: #f0f0f0;
+      border: 1px solid #444;
+    }
+
+    .contactForm button {
+      background-color: #44c2ef;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contactForm button:hover {
+      background-color: #33a7d1;
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: lightcyan;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    #backToTop {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: lightcyan;
+      color: black;
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    /* Switch Dark Mode */
+    .dark-mode-switch {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .dark-mode-switch input[type="checkbox"] {
+      appearance: none;
+      width: 40px;
+      height: 20px;
+      background: #ccc;
+      border-radius: 20px;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      transition: background 0.3s;
+    }
+
+    .dark-mode-switch input[type="checkbox"]::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      top: 1px;
+      left: 1px;
+      transition: transform 0.3s;
+    }
+
+    .dark-mode-switch input[type="checkbox"]:checked {
+      background: #4fbe79;
+    }
+
+    .dark-mode-switch input[type="checkbox"]:checked::before {
+      transform: translateX(20px);
+    }
+
+    @media (max-width: 480px){
+      footer p {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><a href="#section0">Welcome to My Portfolio</a></div>
+    <ul>
+      <li><a href="#section1">About</a></li>
+      <li><a href="#section2">Projects</a></li>
+      <li><a href="#section3">Contact</a></li>
+    </ul>
+    <div class="dark-mode-switch">
+      <input type="checkbox" id="darkModeToggle" />
+    </div>
+  </nav>
+
+  <main>
+    <section id="section0">
+      <div class="contentHero">
+        <p>Hi there! &#128075;, I am</p>
+        <h2>Muhammad Ali Yusuf</h2>
+        <p>I am currently seeking employment.</p>
+      </div>
+    </section>
+
+    <section id="section1">
+      <div class="contentAboutMe">
+        <h2>About Me</h2>
+      </div><br>
+      <div class="contentAboutMe">
+        <p>I am a graduate of English Education, and I completed my studies on September 14, 2024. For my final project, commonly known as a thesis, I developed an English learning curriculum designed specifically for university students at my campus. The curriculum was developed using the Research and Development method with the Taba Model.</p><br>
+        <p>Since graduating, I have been learning web programming independently to build a web-based English learning platform. The goal of this platform is to provide a free and flexible learning resource that can be easily accessed. The target users of my website are not only students but also educators.</p><br>
+          <p>In the future, I plan to develop a platform similar to Quizizz. The purpose is to provide educators with free teaching tools equipped with customizable features. This project will take time to complete, considering that I am still a beginner in programming and currently learning on my own. Moreover, it will also require funding, as a platform like Quizizz needs a large database.
+            I hope to stay healthy and find a job soon so that I can bring this project to life.</p>
+      </div>
+    </section>
+
+    <section id="section2">
+      <div class="contentProjects">
+        <h2>My Projects</h2>
+      </div><br>
+      <div class="contentProjects">  
+        <a href="https://muhammadaliyusufec.blogspot.com/" target="_blank"><img class="imgProject" src="./image/elixBlog.png" alt="elixBlog" /></a>
+        <p>Simple Steps to Basic English</p>
+      </div><br>
+      <div class="contentProjects">
+        <a href="..//elixLibrary/elixLibrary.html" target="_blank"><img class="imgProject" src="./image/elixLibrary.png" alt="elixLibrary" /></a>
+        <p>ELiX Library</p>
+      </div><br>
+      <div class="contentProjects">
+        <a href="../verbsTable/verbsTable.html" target="_blank"><img class="imgProject" src="./image/verbsTable.png" alt="verbsTable" /></a>
+        <p>Vers Table</p>
+      </div><br>
+      <!-- Tambahkan project lainnya seperti biasa -->
+    </section>
+
+    <section id="section3">
+      <div class="contentContact">
+        <h2>Contact Me</h2>
+        <form name="elix contact form" class="contactForm" id="contactForm">
+          <input type="text" name="nama" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="pesan" rows="5" placeholder="Message ..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="formMessage" style="margin-top:10px; font-size: 0.9em;"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Muhammad Ali Yusuf | All Rights Reserved</p>
+    <div id="backToTop">↑ Top</div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    // Back to Top
+    document.getElementById("backToTop").addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Dark mode toggle
+    const darkToggle = document.getElementById("darkModeToggle");
+    darkToggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark", darkToggle.checked);
+    });
+
+    // Form handler
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzLMDn2oGKF-ziF5V0qIv_kgBB3ZVEhhbL7YNgLeoA9uJBF9lQ9g9TvuLJ4g4Nr7nwg/exec'
+const form = document.forms['elix contact form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+      console.log('Success!', response)
+      alert('Pesan berhasil dikirim!');
+      form.reset(); // Reset form setelah berhasil
+    })
+    .catch(error => {
+      alert('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.');
+      console.error('Error!', error.message);
+    });
+});
+
+  </script>
+</body>
+</html>

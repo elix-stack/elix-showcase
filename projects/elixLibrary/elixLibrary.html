@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | Elix</title>
+
+    <style>
+        /* =============================
+           RESET DAN GAYA DASAR
+        ============================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 80px;     /* Jeda atas untuk navbar */
+            padding-bottom: 60px;  /* Jeda bawah untuk footer */
+        }
+
+        /* =============================
+           NAVBAR (POSISI TETAP DI ATAS)
+        ============================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #007BFF;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 1000;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .navbar a:hover {
+            color: gray;
+        }
+
+        /* =============================
+           FORM PENCARIAN (DI BAWAH NAVBAR)
+        ============================== */
+        .search-container {
+            position: fixed;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            gap: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* =============================
+           GRID KARTU BUKU
+        ============================== */
+        .book-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-height: 70vh; /* Agar footer tetap terlihat */
+            overflow-y: auto;
+            margin-top: 120px; /* Hindari tabrakan dengan navbar */
+            padding-bottom: 20px;
+        }
+
+        .book-card {
+            width: 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .book-card:hover {
+            transform: scale(1.05);
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .book-card .card-body {
+            padding: 15px;
+        }
+
+        .book-card h5 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            min-height: 40px;
+        }
+
+        .book-card a {
+            display: block;
+            text-align: center;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .book-card a:hover {
+            background: #0056b3;
+        }
+
+        /* =============================
+           HIGHLIGHT HASIL PENCARIAN
+        ============================== */
+        .highlight {
+            border: 2px solid red;
+        }
+
+        /* =============================
+           FOOTER (POSISI TETAP DI BAWAH)
+        ============================== */
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+       /* =============================
+   RESPONSIF: TABLET (≤ 768px)
+   3 kartu per baris
+============================= */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    input[type="text"],
+    button {
+        width: 100%;
+    }
+
+    .book-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 140px;
+    }
+
+    .book-card {
+        flex: 0 0 calc(33.333% - 20px); /* 3 kolom */
+        max-width: 250px;
+    }
+
+    .book-card img {
+        height: 200px;
+    }
+
+    .book-card h5 {
+        font-size: 14px;
+    }
+}
+
+/* =============================
+   RESPONSIF: HP SEDANG (≤ 576px)
+   2 kartu per baris
+============================= */
+@media (max-width: 576px) {
+    .book-card {
+        flex: 0 0 calc(50% - 20px); /* 2 kolom */
+        max-width: 220px;
+    }
+
+    .book-card img {
+        height: 180px;
+    }
+
+    .book-card h5 {
+        font-size: 13px;
+    }
+}
+
+/* =============================
+   RESPONSIF: HP KECIL (≤ 480px)
+   2 kartu per baris (bukan 1)
+============================= */
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+
+    .search-container {
+        width: 95%;
+        padding: 6px;
+    }
+
+    .book-card {
+        flex: 0 0 calc(50% - 20px); /* tetap 2 kolom */
+        max-width: 200px;
+    }
+
+    .book-card img {
+        height: 160px;
+    }
+
+    .book-card h5 {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <div class="navbar">
+        <p>Welcome to the ELIX Library</p>
+        <p><a href="../contactForm/contactForm.html" target="_blank">contact me</a></p>
+    </div>
+
+    <!-- =========================
+         KOTAK PENCARIAN
+    ========================== -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search books...">
+        <button onclick="searchBook()">Search</button>
+    </div>
+
+    <!-- =========================
+         DAFTAR BUKU (akan diisi via JS)
+    ========================== -->
+    <div id="pdf-list" class="book-grid"></div>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+        <p>&copy; 2025 Muhammad Ali Yusuf | All Rights Reserved</p>
+    </footer>
+
+    <!-- =========================
+         SCRIPT JAVASCRIPT
+    ========================== -->
+    <script>
+        let bookData = []; // Menyimpan data global buku dari Google Drive
+
+        // Ambil data dari Google Apps Script
+        async function fetchPDFFiles() {
+            const scriptUrl = "https://script.google.com/macros/s/AKfycbxtxGbKoxiTTf-Pt4uxsRPIEM4EDv7bhNVlfkS0bulD9RkyZFI1_Zd0dvGmVjhwLVFZyw/exec";
+            try {
+                const response = await fetch(scriptUrl);
+                const data = await response.json();
+                bookData = data.files;
+                displayBooks(bookData);
+            } catch (error) {
+                console.error("Gagal mengambil data:", error);
+            }
+        }
+
+        // Tampilkan daftar buku dalam bentuk kartu
+        function displayBooks(books) {
+            const pdfList = document.getElementById("pdf-list");
+            pdfList.innerHTML = "";
+
+            books.forEach(file => {
+                const bookCard = document.createElement("div");
+                bookCard.classList.add("book-card");
+
+                bookCard.innerHTML = `
+                    <img src="${file.thumbnailLink}" alt="${file.name}">
+                    <div class="card-body">
+                        <h5>${file.name}</h5>
+                        <a href="${file.webViewLink}" target="_blank">View PDF</a>
+                    </div>
+                `;
+                pdfList.appendChild(bookCard);
+            });
+        }
+
+        // Fungsi pencarian buku berdasarkan judul
+        function searchBook() {
+            const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+            const foundBooks = [];
+            const otherBooks = [];
+
+            // Pisahkan buku yang cocok dan tidak
+            bookData.forEach(book => {
+                if (book.name.toLowerCase().includes(searchQuery)) {
+                    foundBooks.push(book);
+                } else {
+                    otherBooks.push(book);
+                }
+            });
+
+            const sortedBooks = [...foundBooks, ...otherBooks];
+            displayBooks(sortedBooks);
+
+            // Highlight hasil pencarian
+            const bookCards = document.querySelectorAll(".book-card");
+            foundBooks.forEach((_, index) => {
+                bookCards[index].classList.add("highlight");
+                setTimeout(() => bookCards[index].classList.remove("highlight"), 2000);
+            });
+
+            // Tampilkan pesan jika tidak ditemukan
+            if (foundBooks.length === 0) {
+                alert("Buku tidak ditemukan.");
+            }
+
+            // Scroll otomatis ke bagian hasil
+            window.scrollTo({
+                top: document.getElementById("pdf-list").offsetTop,
+                behavior: "smooth"
+            });
+        }
+
+        // Jalankan saat halaman dibuka
+        fetchPDFFiles();
+    </script>
+
+</body>
+</html>
