@@ -4,22 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elix Showcase</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌓</button>
+
     <h1>📚 Elix Showcase</h1>
     <p>Selamat datang! Di sini kamu bisa melihat proyek-proyek web saya yang sudah selesai dan siap digunakan.</p>
 
     <ul>
-      <li><a href="muhammad.ali.yusufec@blogsppot.com" target="_blank">📖 Simple Steps to Basic English</a></li>
-      <li><a href="https://elix-stack.github.io/elix-digital-library/ " target="_blank">📖 Elix Library</a></li>
+      <li><a href="https://muhammad.ali.yusufec.blogspot.com" target="_blank">📖 Simple Steps to Basic English</a></li>
+      <li><a href="https://elix-stack.github.io/elix-digital-library/" target="_blank">📖 Elix Library</a></li>
       <li><a href="https://elix-stack.github.io/verbs-table/" target="_blank">📖 Verbs Table</a></li>
+      <li><a href="https://elix-stack.github.io/elix-bibliotheca/" target="_blank">📖 Elix Bibliotheca</a></li>
       <li><span>🔧 Synonym List (Coming Soon)</span></li>
       <li><span>🔧 Antonym List (Coming Soon)</span></li>
       <li><span>🔧 Collective Noun List (Coming Soon)</span></li>
     </ul>
-    <br />
 
-    <p><a href="projects/contactForm/contactForm.html">Contact me</a></p>
+    <br />
+    <p><a href="projects/contactForm/contactForm.html" target="_blank">Contact me</a></p>
+
+    <script>
+      const toggle = document.getElementById('darkModeToggle');
+      const body = document.body;
+
+      // Load saved mode
+      if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark');
+      }
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+
+        // Simpan preferensi
+        if (body.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+        } else {
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    </script>
   </body>
 </html>
