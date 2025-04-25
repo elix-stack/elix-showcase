@@ -29,6 +29,6 @@ Welcome to Elix Showcase — a place where I store and showcase completed web pr
 If you have any questions, feel free to reach out through this link:  
 [Contact Form](https://elix-stack.github.io/elix-showcase/projects/contactForm/contactForm.html)
 
-## License
+## 📝 License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to use, modify, and distribute the code as long as you provide proper attribution to the original author.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). You can also view the [LICENSE](LICENSE) file in this repository. You are free to use, modify, and distribute the code as long as you provide proper attribution to the original author.
