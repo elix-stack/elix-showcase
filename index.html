@@ -82,6 +82,7 @@
       }
 
       // Interaksi pertama: klik, tap, atau sentuhan
+      document.addEventListener('click', playMusic);
       document.addEventListener('mousedown', playMusic);
       document.addEventListener('touchstart', playMusic);
       window.addEventListener('scroll', playMusic);
