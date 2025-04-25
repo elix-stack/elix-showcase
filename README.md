@@ -9,13 +9,14 @@ Welcome to Elix Showcase — a place where I store and showcase completed web pr
 
 ## 🔍 Project List
 
-| Project Name                  | Short Description                          | Demo Link                                                   |
+| Project Name                  | Short Description                          | Demo Link                                                    |
 |-------------------------------|--------------------------------------------|--------------------------------------------------------------|
 | Simple Steps to Basic English | English learning blog                      | [Open](http://muhammad.ali.yusufec@blogspot.com)             |
 | Elix Library                  | Web-based digital library                  | [Open](https://elix-stack.github.io/elix-digital-library/)   |
 | Verbs Table                   | Complete list of regular & irregular verbs | [Open](https://elix-stack.github.io/verbs-table/)            |
 | Synonym List                  | Complete synonym list                      | [Open](https://elix-stack.github.io/synonym-list/)           |
 | Antonym List                  | Complete antonym list                      | [Open](https://elix-stack.github.io/antonym-list/)           |
+| Collective Noun               | Complete collective noun                   | [Open](https://elix-stack.github.io/collective-noun/)        |
 
 ## 🚀 Technologies Used
 
