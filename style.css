@@ -217,3 +217,48 @@ body.dark #darkModeToggle {
   background-color: #4b5563;
   color: #f9fafb;
 }
+
+/* like */
+#likeContainer {
+  margin-top: 20px;
+  font-size: 18px;
+  position: fixed; /* Menetapkan posisi tombol tetap */
+  top: 5px; /* Menempatkan tombol di bagian bawah halaman */
+  left: 20px; /* Menempatkan tombol di sisi kanan halaman */
+  z-index: 1000; /* Agar tombol selalu muncul di atas elemen lain */
+}
+
+#likeButton {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 24px; /* Sesuaikan ukuran ikon */
+  transition: transform 0.2s ease-in-out, color 0.2s ease;
+}
+
+#likeButton:hover {
+  color: #ff4757; /* Warna saat hover */
+}
+
+#likeButton:active {
+  transform: scale(1.5); /* Efek saat diklik */
+  transition: transform 0.1s ease-in-out;
+}
+
+#likeButton {
+  animation: pulse 1.5s infinite; /* Animasi pulse yang berulang */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Ukuran normal */
+  }
+  50% {
+    transform: scale(1.2); /* Ukuran sedikit lebih besar */
+  }
+  100% {
+    transform: scale(1); /* Kembali ke ukuran normal */
+  }
+}
