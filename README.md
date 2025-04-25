@@ -1,21 +1,29 @@
 # Elix Showcase ✨
 
-Selamat datang di **Elix Showcase** — tempat saya menyimpan dan menampilkan proyek-proyek web yang sudah jadi dan siap digunakan publik.
+## 🌐 Live Preview
 
-## 🔍 Daftar Proyek
+You can view the landing page here:  
+👉 [https://elix-stack.github.io/elix-showcase/](https://elix-stack.github.io/elix-showcase/)
 
-| Nama Proyek                   | Deskripsi Singkat                          | Link Demo                                        |
-|-------------------------------|--------------------------------------------|--------------------------------------------------|
-| Simple Steps to Basic English | Blog pembelajaran bahasa Inggris           | [Buka](muhammad.ali.yusufec@blogspot.com)        |
-| Elix Library                  | Perpustakaan digital berbasis web          | [Buka](./projects/elixLibrary/elixLibrary.html)  |
-| Verbs Table                   | Daftar regular dan irregular verb lengkap  | [Buka](./projects/verbsTable/verbsTable.html)    |
+Welcome to Elix Showcase — a place where I store and showcase completed web projects that are ready for public use.
 
-## 🚀 Teknologi yang Digunakan
+## 🔍 Project List
 
-- HTML, CSS, JavaScript
-- Google Apps Script (untuk integrasi backend)
-- GitHub Pages (untuk hosting publik)
+| Project Name                  | Short Description                          | Demo Link                                                   |
+|-------------------------------|--------------------------------------------|--------------------------------------------------------------|
+| Simple Steps to Basic English | English learning blog                      | [Open](http://muhammad.ali.yusufec@blogspot.com)             |
+| Elix Library                  | Web-based digital library                  | [Open](https://elix-stack.github.io/elix-digital-library/)   |
+| Verbs Table                   | Complete list of regular & irregular verbs | [Open](https://elix-stack.github.io/verbs-table/)            |
+| Synonym List                  | Complete synonym list                      | [Open](https://elix-stack.github.io/synonym-list/)           |
+| Antonym List                  | Complete antonym list                      | [Open](https://elix-stack.github.io/antonym-list/)           |
 
-## 📫 Kontak
+## 🚀 Technologies Used
 
-Jika ada pertanyaan, silakan hubungi saya melalui [email kamu di sini] atau buka issue baru.
+- HTML, CSS, JavaScript  
+- Google Apps Script (for backend integration)  
+- GitHub Pages (for public hosting)
+
+## 📫 Contact
+
+If you have any questions, feel free to reach out through this link:  
+[Contact Form](https://elix-stack.github.io/elix-showcase/projects/contactForm/contactForm.html)
