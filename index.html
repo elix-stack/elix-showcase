@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <audio id="backgroundMusic" loop autoplay>
+      <source src="https://drive.google.com/uc?export=download&id=1T-OCkoxbPvrOCSqA9RIG5Ujxtr9Fjuwl" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
     <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌓</button>
 
     <h1>📚 Elix Showcase</h1>
@@ -57,6 +61,22 @@
           localStorage.setItem('theme', 'light');
         }
       });
+
+      // JavaScript to control audio playback based on tab visibility
+      document.addEventListener('visibilitychange', function () {
+        var audio = document.getElementById('backgroundMusic');
+        if (document.hidden) {
+          audio.pause(); // Pause music when tab is hidden
+        } else {
+          audio.play(); // Resume music when tab is active
+        }
+      });
+
+      // Play music automatically when the page loads
+      window.onload = function () {
+        var audio = document.getElementById('backgroundMusic');
+        audio.play();
+      };
     </script>
   </body>
 </html>
