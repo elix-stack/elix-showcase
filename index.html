@@ -8,7 +8,7 @@
   </head>
   <body>
     <audio id="backgroundMusic" loop autoplay muted>
-      <source src="https://drive.google.com/uc?export=download&id=1T-OCkoxbPvrOCSqA9RIG5Ujxtr9Fjuwl" type="audio/mp3" />
+      <source src="assets/audio/dealova.mp3" type="audio/mp3" />
       Your browser does not support the audio element.
     </audio>
 
@@ -63,20 +63,30 @@
         }
       });
 
-      // Tunggu interaksi pengguna untuk mulai memutar musik
-      document.addEventListener('click', function () {
-        var audio = document.getElementById('backgroundMusic');
-        audio.muted = false; // Hapus mute setelah ada interaksi pengguna
-        audio.play(); // Mulai memutar musik
-      });
+      const audio = document.getElementById('backgroundMusic');
+      let isPlayed = false;
 
-      // Event listener untuk menghentikan musik saat tab tidak aktif
-      document.addEventListener('visibilitychange', function () {
-        var audio = document.getElementById('backgroundMusic');
+      function playMusic() {
+        if (!isPlayed) {
+          audio.muted = false;
+          audio.play().catch((err) => {
+            console.warn('Playback prevented:', err);
+          });
+          isPlayed = true;
+        }
+      }
+
+      // Interaksi pertama: klik, tap, atau sentuhan
+      document.addEventListener('mousedown', playMusic);
+      document.addEventListener('touchstart', playMusic);
+      window.addEventListener('scroll', playMusic);
+
+      // Pause saat tab tidak aktif
+      document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
-          audio.pause(); // Hentikan musik jika tab tidak aktif
-        } else {
-          audio.play(); // Mulai memutar musik kembali jika tab aktif
+          audio.pause();
+        } else if (isPlayed) {
+          audio.play();
         }
       });
     </script>
