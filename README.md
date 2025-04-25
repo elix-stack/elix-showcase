@@ -9,13 +9,15 @@ Welcome to Elix Showcase — a place where I store and showcase completed web pr
 
 ## 🔍 Project List
 
-| Project Name                  | Short Description                          | Demo Link                                                   |
+| Project Name                  | Short Description                          | Demo Link                                                    |
 |-------------------------------|--------------------------------------------|--------------------------------------------------------------|
 | Simple Steps to Basic English | English learning blog                      | [Open](http://muhammad.ali.yusufec@blogspot.com)             |
 | Elix Library                  | Web-based digital library                  | [Open](https://elix-stack.github.io/elix-digital-library/)   |
 | Verbs Table                   | Complete list of regular & irregular verbs | [Open](https://elix-stack.github.io/verbs-table/)            |
 | Synonym List                  | Complete synonym list                      | [Open](https://elix-stack.github.io/synonym-list/)           |
 | Antonym List                  | Complete antonym list                      | [Open](https://elix-stack.github.io/antonym-list/)           |
+| Collective Noun               | Complete collective noun                   | [Open](https://elix-stack.github.io/collective-noun/)        |
+| Elix Bibliotheca              | Managenemt Library                         | [Open](https://elix-stack.github.io/elix-bibliotheca/)       |
 
 ## 🚀 Technologies Used
 
@@ -28,6 +30,6 @@ Welcome to Elix Showcase — a place where I store and showcase completed web pr
 If you have any questions, feel free to reach out through this link:  
 [Contact Form](https://elix-stack.github.io/elix-showcase/projects/contactForm/contactForm.html)
 
-## License
+## 📝 License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to use, modify, and distribute the code as long as you provide proper attribution to the original author.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). You can also view the [LICENSE](LICENSE) file in this repository. You are free to use, modify, and distribute the code as long as you provide proper attribution to the original author.
