@@ -17,6 +17,7 @@ Welcome to Elix Showcase — a place where I store and showcase completed web pr
 | Synonym List                  | Complete synonym list                      | [Open](https://elix-stack.github.io/synonym-list/)           |
 | Antonym List                  | Complete antonym list                      | [Open](https://elix-stack.github.io/antonym-list/)           |
 | Collective Noun               | Complete collective noun                   | [Open](https://elix-stack.github.io/collective-noun/)        |
+| Elix Bibliotheca              | Managenemt Library                         | [Open](https://elix-stack.github.io/elix-bibliotheca/)       |
 
 ## 🚀 Technologies Used
 
