@@ -9,15 +9,16 @@ Welcome to Elix Showcase — a place where I store and showcase completed web pr
 
 ## 🔍 Project List
 
-| Project Name                  | Short Description                          | Demo Link                                                    |
-|-------------------------------|--------------------------------------------|--------------------------------------------------------------|
-| Simple Steps to Basic English | English learning blog                      | [Open](http://muhammad.ali.yusufec@blogspot.com)             |
-| Elix Library                  | Web-based digital library                  | [Open](https://elix-stack.github.io/elix-digital-library/)   |
-| Verbs Table                   | Complete list of regular & irregular verbs | [Open](https://elix-stack.github.io/verbs-table/)            |
-| Synonym List                  | Complete synonym list                      | [Open](https://elix-stack.github.io/synonym-list/)           |
-| Antonym List                  | Complete antonym list                      | [Open](https://elix-stack.github.io/antonym-list/)           |
-| Collective Noun               | Complete collective noun                   | [Open](https://elix-stack.github.io/collective-noun/)        |
-| Elix Bibliotheca              | Managenemt Library                         | [Open](https://elix-stack.github.io/elix-bibliotheca/)       |
+| Project Name                  | Short Description                                                                  | Demo Link                                                 |
+|-------------------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| Simple Steps to Basic English | English learning blog (free to use)                                                | [Open](http://muhammad.ali.yusufec@blogspot.com)          |
+| Elix Library                  | Web-based digital library (free to use)                                            | [Open](https://elix-stack.github.io/elix-digital-library/)|
+| Verbs Table                   | Complete list of regular & irregular verbs (free to use)                           | [Open](https://elix-stack.github.io/verbs-table/)         |
+| Synonym List                  | Complete synonym list (free to use)                                                | [Open](https://elix-stack.github.io/synonym-list/)        |
+| Antonym List                  | Complete antonym list (free to use)                                                | [Open](https://elix-stack.github.io/antonym-list/)        |
+| Collective Noun               | Complete collective noun (free to use)                                             | [Open](https://elix-stack.github.io/collective-noun/)     |
+| Elix Bibliotheca              | Free to use open-source projects, with optional paid support or services available.| [Open](https://elix-stack.github.io/elix-bibliotheca/)    |
+| Wedding Invitation 1          | Free to use open-source projects, with optional paid support or services available.| [Open](https://elix-stack.github.io/wedding-invitation-1/)|
 
 ## 🚀 Technologies Used
 
